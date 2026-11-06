@@ -8,7 +8,8 @@
 <meta name="description" content="Hai căn hộ nhà phố Indochine nhìn ra hồ Trúc Bạch và Hồ Tây, 206 Nam Tràng, Ba Đình, Hà Nội. Tầng 3 có bồn tắm ngoài trời, tầng 2 có 3 phòng ngủ view hồ.">
 <meta property="og:title" content="Anhome 206 Nam Tràng · Lakeview Apartments">
 <meta property="og:description" content="Hai căn hộ nhìn ra hồ Trúc Bạch & Hồ Tây, Hà Nội. Two lake-view apartments in a Hanoi townhouse.">
-<meta property="og:image" content="images/hero.jpg">
+<meta property="og:image" content="https://chinhlschinh-star.github.io/anhome-nam-trang/images/hero.jpg">
+<meta property="og:url" content="https://chinhlschinh-star.github.io/anhome-nam-trang/">
 <link rel="icon" href="images/mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -67,7 +68,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;gap:16px;height:60px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:1.15rem;white-space:nowrap}
-.brand img{width:34px;height:auto;background:#fff;border-radius:6px;padding:2px}
+.brand img{width:36px;height:36px;background:#fff;border-radius:8px;padding:1px;object-fit:contain}
 .nav{display:flex;gap:22px;margin-left:auto;font-size:.92rem}
 .nav a{text-decoration:none;color:var(--muted)}
 .nav a:hover{color:var(--ink)}
@@ -78,7 +79,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:clamp(520px,82vh,780px);display:grid;align-items:end;color:var(--hero-ink);isolation:isolate;overflow:hidden}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;z-index:-2}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%;z-index:-2}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,18,15,.05) 30%,rgba(10,18,15,.72) 100%)}
 .hero .wrap{padding-block:56px 44px}
 .hero .eyebrow{color:#F3D493}
@@ -150,7 +151,9 @@ body[data-lang="en"] .timeline .when i{display:none}
 .lake-note{display:flex;gap:10px;align-items:center;font-size:.8rem;color:var(--muted)}
 .lake-note svg{width:40px;height:16px;color:var(--shutter);flex:none}
 
-.apt{display:grid;gap:22px;scroll-margin-top:84px}
+.apts .layout>*{min-width:0}
+.apt{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;scroll-margin-top:84px}
+.apt>*{min-width:0}
 .apt+.apt{margin-top:clamp(56px,8vw,96px);padding-top:clamp(56px,8vw,96px);border-top:1px solid var(--line)}
 .apt-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 24px}
 .apt-head h3{font-size:clamp(1.7rem,3.4vw,2.5rem)}
@@ -271,7 +274,7 @@ dialog.lb::backdrop{background:rgba(6,12,10,.92)}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#top"><img src="images/mark.png" alt="Anhome" width="34" height="33">206 Nam Tràng</a>
+    <a class="brand" href="#top"><img src="images/mark.png" alt="Anhome" width="36" height="36">206 Nam Tràng</a>
     <nav class="nav" aria-label="Mục lục">
       <a href="#can-ho"><span lang="vi">Căn hộ</span><span lang="en">Apartments</span></a>
       <a href="#tien-nghi"><span lang="vi">Tiện nghi</span><span lang="en">Amenities</span></a>
@@ -353,7 +356,7 @@ dialog.lb::backdrop{background:rgba(6,12,10,.92)}
         <p><span lang="vi">Nấu bữa trưa trong căn bếp đủ đồ, cửa sổ nhìn ra hồ.</span><span lang="en">Cook lunch in a full kitchen with a lake window.</span></p>
       </li>
       <li>
-        <img src="images/sunset.jpg" alt="Hoàng hôn trên hồ nhìn từ ban công" loading="lazy">
+        <img src="images/t3-14.jpg" alt="Hồ Trúc Bạch lúc chiều nhìn từ ban công" loading="lazy">
         <div class="when"><b><span lang="vi">Chiều</span><span lang="en">Sunset</span></b><i class="both" lang="en">Sunset</i></div>
         <p><span lang="vi">Ra ban công ngắm hoàng hôn buông xuống mặt hồ, khoảnh khắc đẹp nhất trong ngày.</span><span lang="en">Watch the sun go down over the lake from the balcony, the best moment of the day.</span></p>
       </li>
