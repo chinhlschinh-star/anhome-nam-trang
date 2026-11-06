@@ -1,0 +1,669 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Anhome 206 Nam Tràng</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Hai căn hộ nhà phố Indochine nhìn ra hồ Trúc Bạch và Hồ Tây, 206 Nam Tràng, Ba Đình, Hà Nội. Tầng 3 có bồn tắm ngoài trời, tầng 2 có 3 phòng ngủ view hồ.">
+<meta property="og:title" content="Anhome 206 Nam Tràng · Lakeview Apartments">
+<meta property="og:description" content="Hai căn hộ nhìn ra hồ Trúc Bạch & Hồ Tây, Hà Nội. Two lake-view apartments in a Hanoi townhouse.">
+<meta property="og:image" content="images/hero.jpg">
+<link rel="icon" href="images/mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Prata&family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: full-bleed lake hero → narrow reading column → two apartments as photo strips beside a stacked "building section" → amenity grid → contact band. Cement-tile motif marks section breaks. */
+:root{
+  --bg:#EDF0E8;          /* limewash with a celadon tint */
+  --surface:#F8F9F4;
+  --ink:#1B2A24;         /* shutter green, nearly black */
+  --muted:#56665E;
+  --line:#CBD3C8;
+  --shutter:#2D5B4B;     /* painted wooden shutters */
+  --shutter-ink:#F4F6EF;
+  --ochre:#C98F2A;       /* Hanoi colonial yellow */
+  --ochre-soft:#F1E2BF;
+  --tile:#2D5B4B;
+  --hero-ink:#FBF8EF;
+  --display:"Prata","Playfair Display",Georgia,"Times New Roman",serif;
+  --body:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --r:10px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0E1916; --surface:#15231F; --ink:#E6ECE5; --muted:#9BAEA4; --line:#2A3C36;
+    --shutter:#7DBBA3; --shutter-ink:#0E1916; --ochre:#E5B457; --ochre-soft:#3A3220; --tile:#7DBBA3;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0E1916; --surface:#15231F; --ink:#E6ECE5; --muted:#9BAEA4; --line:#2A3C36;
+  --shutter:#7DBBA3; --shutter-ink:#0E1916; --ochre:#E5B457; --ochre-soft:#3A3220; --tile:#7DBBA3;
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+
+/* language toggle: both languages live in the page, one is shown */
+body[data-lang="vi"] [lang="en"]:not(.both),
+body[data-lang="en"] [lang="vi"]:not(.both){display:none}
+
+.wrap{width:100%;max-width:1160px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--ochre)}
+
+/* ---------- top bar ---------- */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:16px;height:60px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:1.15rem;white-space:nowrap}
+.brand img{width:34px;height:auto;background:#fff;border-radius:6px;padding:2px}
+.nav{display:flex;gap:22px;margin-left:auto;font-size:.92rem}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav a:hover{color:var(--ink)}
+.lang{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:2px;flex:none}
+.lang button{all:unset;cursor:pointer;font-size:.78rem;font-weight:600;letter-spacing:.06em;padding:4px 10px;border-radius:999px;color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+@media (max-width:820px){.nav{display:none}.lang{margin-left:auto}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:clamp(520px,82vh,780px);display:grid;align-items:end;color:var(--hero-ink);isolation:isolate;overflow:hidden}
+.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;z-index:-2}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(10,18,15,.05) 30%,rgba(10,18,15,.72) 100%)}
+.hero .wrap{padding-block:56px 44px}
+.hero .eyebrow{color:#F3D493}
+.hero h1{font-size:clamp(2.5rem,7vw,5.4rem);margin-top:14px;max-width:12ch}
+.hero .sub{font-size:clamp(1.05rem,2vw,1.3rem);margin-top:14px;max-width:34ch;opacity:.95}
+.hero .addr{margin-top:6px;font-size:.92rem;opacity:.8}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 20px;border-radius:999px;font-weight:600;font-size:.95rem;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{transform:translateY(-1px)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-primary{background:var(--shutter);color:var(--shutter-ink)}
+.btn-light{background:#FBF8EF;color:#1B2A24}
+.btn-ghost{border-color:rgba(251,248,239,.6);color:#FBF8EF}
+.btn-line{border-color:var(--line);color:var(--ink);background:var(--surface)}
+
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:40px;border-top:1px solid rgba(251,248,239,.3)}
+.facts div{padding:16px 16px 0 0}
+.facts b{display:block;font-family:var(--display);font-weight:400;font-size:1.5rem}
+.facts span{font-size:.85rem;opacity:.8}
+@media (max-width:640px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* ---------- tile band ---------- */
+.tiles{height:28px;background:var(--tile);opacity:.85;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.3'%3E%3Cpath d='M14 3c3 4 3 7 0 11c-3-4-3-7 0-11zM14 25c3-4 3-7 0-11c-3 4-3 7 0 11zM3 14c4-3 7-3 11 0c-4 3-7 3-11 0zM25 14c-4-3-7-3-11 0c4 3 7 3 11 0z'/%3E%3Cpath d='M0 5a5 5 0 0 0 5-5M23 0a5 5 0 0 0 5 5M28 23a5 5 0 0 0-5 5M5 28a5 5 0 0 0-5-5'/%3E%3C/g%3E%3Ccircle cx='14' cy='14' r='1.6'/%3E%3C/svg%3E") repeat-x center/28px 28px;
+          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.3'%3E%3Cpath d='M14 3c3 4 3 7 0 11c-3-4-3-7 0-11zM14 25c3-4 3-7 0-11c-3 4-3 7 0 11zM3 14c4-3 7-3 11 0c-4 3-7 3-11 0zM25 14c-4-3-7-3-11 0c4 3 7 3 11 0z'/%3E%3Cpath d='M0 5a5 5 0 0 0 5-5M23 0a5 5 0 0 0 5 5M28 23a5 5 0 0 0-5 5M5 28a5 5 0 0 0-5-5'/%3E%3C/g%3E%3Ccircle cx='14' cy='14' r='1.6'/%3E%3C/svg%3E") repeat-x center/28px 28px}
+
+section{padding-block:clamp(64px,9vw,112px)}
+.head{display:grid;gap:10px;margin-bottom:36px;max-width:640px}
+.head h2{font-size:clamp(1.9rem,4.2vw,3rem)}
+.head p{color:var(--muted)}
+
+/* ---------- intro ---------- */
+.intro .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(28px,6vw,80px);align-items:center}
+.intro figure{margin:0;position:relative}
+.intro figure img{border-radius:var(--r);aspect-ratio:4/3.4;object-fit:cover;width:100%}
+.intro figcaption{font-size:.82rem;color:var(--muted);margin-top:10px}
+.intro .text{display:grid;gap:18px;min-width:0}
+.intro h2{font-size:clamp(1.9rem,4vw,2.8rem)}
+.intro .lead{font-size:1.08rem;max-width:58ch}
+.materials{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;padding:0;list-style:none}
+.materials li{font-size:.85rem;padding:5px 12px;border-radius:999px;background:var(--ochre-soft);color:var(--ink)}
+@media (max-width:820px){.intro .wrap{grid-template-columns:1fr}}
+
+/* ---------- a day ---------- */
+.day{background:var(--surface);border-block:1px solid var(--line)}
+.timeline{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;list-style:none;margin:0;padding:0;counter-reset:t}
+.timeline li{display:grid;gap:12px;align-content:start;min-width:0}
+.timeline img{aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);width:100%}
+.timeline .when{display:flex;align-items:baseline;gap:10px;border-top:1px solid var(--line);padding-top:12px}
+.timeline .when b{font-family:var(--display);font-weight:400;font-size:1.35rem}
+.timeline .when i{font-style:normal;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ochre);font-weight:600}
+.timeline p{color:var(--muted);font-size:.95rem}
+body[data-lang="en"] .timeline .when i{display:none}
+@media (max-width:900px){.timeline{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.timeline{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:78%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-inline:-20px;padding-inline:20px;scrollbar-width:none}.timeline li{scroll-snap-align:start}}
+
+/* ---------- apartments ---------- */
+.apts .layout{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.section-view{position:sticky;top:88px;display:grid;gap:14px}
+.section-view .cap{font-size:.78rem;color:var(--muted);letter-spacing:.06em}
+.house{display:grid;gap:0;border:1.5px solid var(--ink);border-radius:4px;overflow:hidden;background:var(--surface)}
+.house a{display:grid;gap:2px;padding:14px 14px;text-decoration:none;border-top:1.5px solid var(--ink);transition:background .15s}
+.house a:first-child{border-top:0}
+.house a:hover,.house a.on{background:var(--ochre-soft)}
+.house b{font-family:var(--display);font-weight:400;font-size:1.15rem}
+.house span{font-size:.8rem;color:var(--muted)}
+.house .ground{padding:10px 14px;border-top:1.5px solid var(--ink);font-size:.78rem;color:var(--muted);background:repeating-linear-gradient(135deg,transparent 0 6px,var(--line) 6px 7px)}
+.roof{height:22px;background:var(--ink);clip-path:polygon(6% 100%,50% 0,94% 100%)}
+.lake-note{display:flex;gap:10px;align-items:center;font-size:.8rem;color:var(--muted)}
+.lake-note svg{width:40px;height:16px;color:var(--shutter);flex:none}
+
+.apt{display:grid;gap:22px;scroll-margin-top:84px}
+.apt+.apt{margin-top:clamp(56px,8vw,96px);padding-top:clamp(56px,8vw,96px);border-top:1px solid var(--line)}
+.apt-head{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:12px 24px}
+.apt-head h3{font-size:clamp(1.7rem,3.4vw,2.5rem)}
+.apt-head .eyebrow{display:block;margin-bottom:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.chips li{font-size:.85rem;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.chips li.hl{border-color:var(--ochre);background:var(--ochre-soft)}
+
+.strip{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,34%);gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.strip button{all:unset;cursor:zoom-in;scroll-snap-align:start;border-radius:var(--r);overflow:hidden;position:relative}
+.strip button:focus-visible{outline:2px solid var(--ochre);outline-offset:-2px}
+.strip button:first-child{grid-row:span 2;grid-column:span 1}
+.strip img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;transition:transform .4s}
+.strip button:hover img{transform:scale(1.03)}
+.strip-wrap{position:relative}
+.strip-nav{display:flex;gap:8px;justify-content:flex-end;margin-top:6px}
+.strip-nav button{all:unset;cursor:pointer;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:var(--surface)}
+.strip-nav svg{width:16px;height:16px}
+.strip-count{margin-right:auto;font-size:.82rem;color:var(--muted);align-self:center}
+@media (max-width:640px){.strip{grid-auto-columns:84%}}
+
+.apt-body{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:start}
+.apt-body p{max-width:60ch}
+.rooms{list-style:none;padding:0;margin:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.rooms li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:.92rem}
+.rooms li span:last-child{color:var(--muted);text-align:right}
+.apt .cta-row{margin-top:4px}
+@media (max-width:900px){.apts .layout{grid-template-columns:1fr}.section-view{display:none}.apt-body{grid-template-columns:1fr}}
+
+/* ---------- amenities ---------- */
+.amen{background:var(--surface);border-block:1px solid var(--line)}
+.grid-amen{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:0;list-style:none;margin:0;padding:0;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.grid-amen li{display:flex;gap:14px;align-items:center;padding:18px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-width:0}
+.grid-amen svg{width:26px;height:26px;flex:none;color:var(--shutter);fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.grid-amen b{display:block;font-weight:500;font-size:.95rem;line-height:1.3}
+.grid-amen small{display:block;color:var(--muted);font-size:.8rem}
+.grid-amen li.star{background:var(--ochre-soft)}
+
+/* ---------- location ---------- */
+.loc .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,5vw,64px);align-items:stretch}
+.loc .text{display:grid;gap:18px;align-content:center}
+.coords{font-variant-numeric:tabular-nums;font-size:.85rem;color:var(--muted);letter-spacing:.04em}
+.map{position:relative;border-radius:var(--r);overflow:hidden;min-height:340px;background:var(--surface);border:1px solid var(--line)}
+.map>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.map .overlay{position:absolute;inset:auto 16px 16px 16px;display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:820px){.loc .wrap{grid-template-columns:1fr}}
+
+/* ---------- contact ---------- */
+.contact{background:var(--shutter);color:var(--shutter-ink)}
+.contact .wrap{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact h2{font-size:clamp(2rem,4.5vw,3.2rem)}
+.contact .eyebrow{color:var(--shutter-ink);opacity:.75}
+.contact p{opacity:.85;max-width:48ch;margin-top:14px}
+.phone{font-family:var(--display);font-size:clamp(2rem,5vw,3rem);font-variant-numeric:tabular-nums;letter-spacing:.02em;user-select:all;display:block}
+.contact .ch{display:grid;gap:10px;margin-top:18px}
+.contact .ch a{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px;border-radius:var(--r);background:color-mix(in srgb,var(--shutter-ink) 12%,transparent);text-decoration:none;font-weight:600;transition:background .15s}
+.contact .ch a:hover{background:color-mix(in srgb,var(--shutter-ink) 22%,transparent)}
+.contact .ch a span{font-weight:400;opacity:.75;font-size:.88rem}
+.copy{all:unset;cursor:pointer;font-size:.82rem;text-decoration:underline;text-underline-offset:3px;opacity:.8;margin-top:6px}
+@media (max-width:820px){.contact .wrap{grid-template-columns:1fr}}
+
+footer{padding-block:28px 96px;font-size:.82rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+
+/* ---------- mobile contact bar ---------- */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:25;display:none;gap:8px;padding:10px max(12px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(12px,env(safe-area-inset-left,0px));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.dock a{flex:1;display:grid;place-items:center;min-height:44px;border-radius:999px;font-weight:600;font-size:.9rem;text-decoration:none;border:1px solid var(--line);background:var(--surface)}
+.dock a.main{background:var(--shutter);color:var(--shutter-ink);border-color:transparent}
+@media (max-width:720px){.dock{display:flex}}
+
+/* ---------- lightbox ---------- */
+dialog.lb{border:0;padding:0;background:transparent;max-width:100vw;max-height:100vh;width:100vw;height:100vh;margin:0}
+dialog.lb::backdrop{background:rgba(6,12,10,.92)}
+.lb-inner{position:relative;width:100%;height:100%;display:grid;place-items:center;padding:56px max(16px,env(safe-area-inset-right,0px)) 56px max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lb button{all:unset;cursor:pointer;position:absolute;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);color:#fff}
+.lb button svg{width:20px;height:20px}
+.lb .x{top:calc(12px + env(safe-area-inset-top,0px));right:max(12px,env(safe-area-inset-right,0px))}
+.lb .prev{left:max(12px,env(safe-area-inset-left,0px));top:50%;translate:0 -50%}
+.lb .next{right:max(12px,env(safe-area-inset-right,0px));top:50%;translate:0 -50%}
+.lb .n{position:absolute;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:#fff;font-size:.85rem;opacity:.75;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body data-lang="vi">
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-zalo" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 5h16v11H11l-4 3v-3H4z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 21s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+
+    <symbol id="a-lake" viewBox="0 0 24 24"><path d="M3 8c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0M3 13c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0M3 18c2-1.5 4-1.5 6 0s4 1.5 6 0 4-1.5 6 0"/></symbol>
+    <symbol id="a-tub" viewBox="0 0 24 24"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5zM6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></symbol>
+    <symbol id="a-proj" viewBox="0 0 24 24"><rect x="3" y="10" width="18" height="8" rx="2"/><circle cx="9" cy="14" r="2"/><path d="M14 14h4M12 7V4M8 8 6.5 5.5M16 8l1.5-2.5"/></symbol>
+    <symbol id="a-tv" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 3l4 4 4-4"/></symbol>
+    <symbol id="a-pot" viewBox="0 0 24 24"><path d="M5 11h14v6a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3zM3 11h18M9 8h6M12 5v3"/></symbol>
+    <symbol id="a-fridge" viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M6 10h12M9 5v2M9 13v3"/></symbol>
+    <symbol id="a-micro" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><rect x="5" y="8" width="10" height="8" rx="1"/><path d="M18 9v.01M18 13v2"/></symbol>
+    <symbol id="a-dish" viewBox="0 0 24 24"><path d="M5 3v5a2 2 0 0 0 4 0V3M7 10v11M17 21V3c-2 0-3 3-3 7h3"/></symbol>
+    <symbol id="a-wash" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M7 5.5h2M10 14a2.5 2.5 0 0 0 4-1.5"/></symbol>
+    <symbol id="a-ac" viewBox="0 0 24 24"><path d="M12 2v20M3.3 7l17.4 10M20.7 7 3.3 17M9.5 3.5 12 6l2.5-2.5M9.5 20.5 12 18l2.5 2.5"/></symbol>
+    <symbol id="a-hot" viewBox="0 0 24 24"><path d="M12 3s6 6.6 6 11a6 6 0 0 1-12 0c0-4.4 6-11 6-11zM10 15a2 2 0 0 0 2 2"/></symbol>
+    <symbol id="a-dryer" viewBox="0 0 24 24"><path d="M3 8h10a3 3 0 1 0-3-3M3 12h15a3 3 0 1 1-3 3M3 16h7"/></symbol>
+    <symbol id="a-soap" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM18.5 16.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></symbol>
+    <symbol id="a-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5v.01"/></symbol>
+    <symbol id="a-balc" viewBox="0 0 24 24"><path d="M3 21h18M4 21v-7h16v7M8 14v7M12 14v7M16 14v7M3 14h18M12 3v2M7 6l1 1.5M17 6l-1 1.5M9 11a3 3 0 0 1 6 0"/></symbol>
+    <symbol id="a-car" viewBox="0 0 24 24"><path d="M5 11l2-5h10l2 5M3 11h18v6H3zM6 17v2M18 17v2"/><circle cx="7" cy="14" r=".8"/><circle cx="17" cy="14" r=".8"/></symbol>
+    <symbol id="a-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14.5 8.5l2 2"/></symbol>
+    <symbol id="a-loft" viewBox="0 0 24 24"><path d="M3 11 12 4l9 7M5 10v10h14V10M8 20v-5h8v5M8 15l2-3h4l2 3"/></symbol>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="images/mark.png" alt="Anhome" width="34" height="33">206 Nam Tràng</a>
+    <nav class="nav" aria-label="Mục lục">
+      <a href="#can-ho"><span lang="vi">Căn hộ</span><span lang="en">Apartments</span></a>
+      <a href="#tien-nghi"><span lang="vi">Tiện nghi</span><span lang="en">Amenities</span></a>
+      <a href="#vi-tri"><span lang="vi">Vị trí</span><span lang="en">Location</span></a>
+      <a href="#lien-he"><span lang="vi">Liên hệ</span><span lang="en">Contact</span></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Ngôn ngữ / Language">
+      <button type="button" id="lang-vi" data-set="vi" aria-pressed="true">VI</button>
+      <button type="button" id="lang-en" data-set="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<div class="hero">
+  <img src="images/hero.jpg" alt="Hoàng hôn trên Hồ Tây nhìn từ ban công 206 Nam Tràng" fetchpriority="high">
+  <div class="wrap">
+    <span class="eyebrow"><span lang="vi">Cho thuê ngắn &amp; dài hạn · Trúc Bạch, Hà Nội</span><span lang="en">Short &amp; long stays · Truc Bach, Hanoi</span></span>
+    <h1>Anhome 206 Nam Tràng</h1>
+    <p class="sub"><span lang="vi">Hai căn hộ trong nhà phố Indochine, nhìn thẳng ra hồ Trúc Bạch và Hồ Tây.</span><span lang="en">Two apartments in an Indochine townhouse, looking straight out over Truc Bach and West Lake.</span></p>
+    <p class="addr">206 Nam Tràng, Trúc Bạch, Ba Đình, Hà Nội</p>
+    <div class="cta-row">
+      <a class="btn btn-light" href="#can-ho"><span lang="vi">Xem 2 căn hộ</span><span lang="en">See the 2 apartments</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <a class="btn btn-ghost" href="https://zalo.me/0967935611" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-zalo"/></svg><span lang="vi">Nhắn Zalo hỏi phòng</span><span lang="en">Message on Zalo</span></a>
+    </div>
+    <div class="facts">
+      <div><b>2</b><span lang="vi">căn hộ riêng · tầng 2 &amp; 3</span><span lang="en">private apartments · floors 2 &amp; 3</span></div>
+      <div><b>5 + 1</b><span lang="vi">phòng ngủ + gác xép</span><span lang="en">bedrooms + loft</span></div>
+      <div><b>20</b><span lang="vi">khách tối đa (cả nhà)</span><span lang="en">guests max (whole house)</span></div>
+      <div><b>2 hồ</b><span lang="vi">Trúc Bạch &amp; Hồ Tây</span><span lang="en">Truc Bach &amp; West Lake</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<section class="intro">
+  <div class="wrap">
+    <figure>
+      <img src="images/intro.jpg" alt="Phòng khách tầng 3 với sàn gạch bông và cửa gỗ" loading="lazy">
+      <figcaption><span lang="vi">Phòng khách tầng 3: gạch bông, cửa gỗ, sofa xám.</span><span lang="en">Floor 3 living room: cement tiles, wooden doors, grey sofa.</span></figcaption>
+    </figure>
+    <div class="text">
+      <span class="eyebrow"><span lang="vi">Nhà phố Hà Nội</span><span lang="en">A Hanoi townhouse</span></span>
+      <h2><span lang="vi">Phong cách Indochine, ngay bên mặt hồ</span><span lang="en">Indochine style, right by the water</span></h2>
+      <p class="lead" lang="vi">Anhome 206 Nam Tràng mang nét nhà phố Việt Nam: gạch bông, cửa gỗ, ban công sắt uốn, ghế mây. Hai căn hộ riêng ở tầng 2 và tầng 3 nhìn thẳng ra mặt hồ Trúc Bạch và Hồ Tây rất rộng.</p>
+      <p class="lead" lang="en">Anhome 206 Nam Trang is a classic Vietnamese townhouse: patterned cement tiles, wooden doors, wrought-iron balconies and rattan chairs. Two private apartments on floors 2 and 3 look straight out over the wide waters of Truc Bach Lake and West Lake.</p>
+      <p lang="vi" style="color:var(--muted)">Phố yên tĩnh, gần nhiều quán ăn, cà phê và điểm tham quan quanh hồ.</p>
+      <p lang="en" style="color:var(--muted)">The street is quiet, yet close to local food, coffee and sights around the lakes.</p>
+      <ul class="materials" aria-label="Chất liệu">
+        <li><span lang="vi">Gạch bông</span><span lang="en">Cement tiles</span></li>
+        <li><span lang="vi">Cửa gỗ</span><span lang="en">Wooden doors</span></li>
+        <li><span lang="vi">Ban công sắt uốn</span><span lang="en">Wrought-iron balconies</span></li>
+        <li><span lang="vi">Ghế mây</span><span lang="en">Rattan chairs</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<div class="tiles" aria-hidden="true"></div>
+
+<!-- A DAY -->
+<section class="day">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow"><span lang="vi">Từ sáng tới tối</span><span lang="en">Morning to night</span></span>
+      <h2><span lang="vi">Một ngày ở Nam Tràng</span><span lang="en">A day at Nam Trang</span></h2>
+    </div>
+    <ol class="timeline">
+      <li>
+        <img src="images/morning.jpg" alt="Phòng ngủ đầy nắng nhìn ra hồ" loading="lazy">
+        <div class="when"><b><span lang="vi">Sáng</span><span lang="en">Morning</span></b><i class="both" lang="en">Morning</i></div>
+        <p><span lang="vi">Thức dậy trong phòng ngủ đầy nắng, kéo rèm là thấy mặt hồ.</span><span lang="en">Wake up in a sunny room with the lake outside.</span></p>
+      </li>
+      <li>
+        <img src="images/midday.jpg" alt="Bếp có cửa sổ nhìn ra hồ" loading="lazy">
+        <div class="when"><b><span lang="vi">Trưa</span><span lang="en">Midday</span></b><i class="both" lang="en">Midday</i></div>
+        <p><span lang="vi">Nấu bữa trưa trong căn bếp đủ đồ, cửa sổ nhìn ra hồ.</span><span lang="en">Cook lunch in a full kitchen with a lake window.</span></p>
+      </li>
+      <li>
+        <img src="images/sunset.jpg" alt="Hoàng hôn trên hồ nhìn từ ban công" loading="lazy">
+        <div class="when"><b><span lang="vi">Chiều</span><span lang="en">Sunset</span></b><i class="both" lang="en">Sunset</i></div>
+        <p><span lang="vi">Ra ban công ngắm hoàng hôn buông xuống mặt hồ, khoảnh khắc đẹp nhất trong ngày.</span><span lang="en">Watch the sun go down over the lake from the balcony, the best moment of the day.</span></p>
+      </li>
+      <li>
+        <img src="images/evening.jpg" alt="Bồn tắm ngoài trời buổi tối" loading="lazy">
+        <div class="when"><b><span lang="vi">Tối</span><span lang="en">Evening</span></b><i class="both" lang="en">Evening</i></div>
+        <p><span lang="vi">Ngâm mình trong bồn tắm ngoài trời ở tầng 3, nhìn đèn phố lung linh trên mặt hồ.</span><span lang="en">Soak in the outdoor bathtub on floor 3 as the city lights shimmer on the lake.</span></p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- APARTMENTS -->
+<section class="apts" id="can-ho">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow"><span lang="vi">Hai căn hộ</span><span lang="en">Two apartments</span></span>
+      <h2><span lang="vi">Chọn tầng phù hợp với nhóm của bạn</span><span lang="en">Pick the floor that fits your group</span></h2>
+      <p><span lang="vi">Mỗi tầng là một căn hộ riêng có bếp, phòng khách và ban công. Đặt một tầng, hoặc cả hai cho nhóm lớn.</span><span lang="en">Each floor is a private apartment with its own kitchen, living room and balcony. Book one floor, or both for a larger group.</span></p>
+    </div>
+
+    <div class="layout">
+      <aside class="section-view" aria-label="Mặt cắt ngôi nhà">
+        <span class="cap"><span lang="vi">MẶT CẮT NGÔI NHÀ</span><span lang="en">HOUSE SECTION</span></span>
+        <div>
+          <div class="roof"></div>
+          <div class="house">
+            <a href="#tang-3" data-floor="tang-3"><b><span lang="vi">Tầng 3</span><span lang="en">Floor 3</span></b><span lang="vi">2 phòng ngủ + gác xép · bồn tắm ngoài trời</span><span lang="en">2 bed + loft · outdoor tub</span></a>
+            <a href="#tang-2" data-floor="tang-2"><b><span lang="vi">Tầng 2</span><span lang="en">Floor 2</span></b><span lang="vi">3 phòng ngủ view hồ · máy chiếu</span><span lang="en">3 lake-view beds · projector</span></a>
+            <div class="ground"><span lang="vi">Tầng 1 · lối vào, ô tô vào tận cửa</span><span lang="en">Ground · entrance, car to the door</span></div>
+          </div>
+        </div>
+        <div class="lake-note"><svg viewBox="0 0 40 16" aria-hidden="true"><path d="M1 5c3-2 6-2 9 0s6 2 9 0 6-2 9 0 6 2 9 0M1 12c3-2 6-2 9 0s6 2 9 0 6-2 9 0 6 2 9 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg><span lang="vi">Mặt trước nhìn ra hồ Trúc Bạch &amp; Hồ Tây</span><span lang="en">Front faces Truc Bach &amp; West Lake</span></div>
+      </aside>
+
+      <div>
+        <!-- FLOOR 3 -->
+        <article class="apt" id="tang-3">
+          <div class="apt-head">
+            <div>
+              <span class="eyebrow"><span lang="vi">Tầng 3 · Tối đa 11 khách</span><span lang="en">Floor 3 · Up to 11 guests</span></span>
+              <h3><span lang="vi">Gác xép &amp; bồn tắm ngắm hoàng hôn</span><span lang="en">Loft &amp; a sunset bathtub</span></h3>
+            </div>
+            <ul class="chips">
+              <li class="hl"><span lang="vi">Bồn tắm ngoài trời</span><span lang="en">Outdoor bathtub</span></li>
+              <li><span lang="vi">2 phòng ngủ + gác xép</span><span lang="en">2 bedrooms + loft</span></li>
+              <li><span lang="vi">2 ban công</span><span lang="en">2 balconies</span></li>
+            </ul>
+          </div>
+          <div class="strip-wrap">
+            <div class="strip" data-gallery="t3" tabindex="-1"></div>
+            <div class="strip-nav"><span class="strip-count"></span><button type="button" data-dir="-1" aria-label="Ảnh trước"><svg><use href="#i-left"/></svg></button><button type="button" data-dir="1" aria-label="Ảnh sau"><svg><use href="#i-right"/></svg></button></div>
+          </div>
+          <div class="apt-body">
+            <div style="display:grid;gap:18px">
+              <p lang="vi">Ban công rộng nhìn ra hồ, có bồn tắm ngoài trời ngắm hoàng hôn trên hồ Trúc Bạch và Hồ Tây. Phòng khách sofa, quầy bar bên cửa sổ view hồ, bếp đầy đủ, 2 phòng ngủ riêng và gác xép rộng. Ban công sau nhìn xuống phố Nam Tràng rợp cây xanh.</p>
+              <p lang="en">A wide lake-facing balcony with an outdoor bathtub for sunsets over Truc Bach and West Lake. Living room with sofa, a bar counter by the lake-view windows, full kitchen, two bedrooms and a large loft. A second balcony looks over leafy Nam Trang street.</p>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://anhome.gohost.app/property/outdoor-bathtub-view-west-lake-2br-loft-anhome-truc-bach-hanoi" target="_blank" rel="noopener"><span lang="vi">Xem giá &amp; đặt Tầng 3</span><span lang="en">Check rates &amp; book Floor 3</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn-line" href="https://zalo.me/0967935611" target="_blank" rel="noopener"><span lang="vi">Hỏi qua Zalo</span><span lang="en">Ask on Zalo</span></a>
+              </div>
+            </div>
+            <ul class="rooms">
+              <li><span lang="vi">Ban công trước</span><span lang="en">Front balcony</span><span><span lang="vi">Bồn tắm, ghế mây, view hồ</span><span lang="en">Bathtub, rattan chairs, lake view</span></span></li>
+              <li><span lang="vi">Phòng khách</span><span lang="en">Living room</span><span><span lang="vi">Sofa, quầy bar cửa sổ</span><span lang="en">Sofa, window bar counter</span></span></li>
+              <li><span lang="vi">Bếp</span><span lang="en">Kitchen</span><span><span lang="vi">Đầy đủ, máy rửa bát</span><span lang="en">Full, dishwasher</span></span></li>
+              <li><span lang="vi">Phòng ngủ</span><span lang="en">Bedrooms</span><span>2</span></li>
+              <li><span lang="vi">Gác xép</span><span lang="en">Loft</span><span><span lang="vi">Rộng, sàn gỗ</span><span lang="en">Large, wooden floor</span></span></li>
+              <li><span lang="vi">Ban công sau</span><span lang="en">Back balcony</span><span><span lang="vi">Nhìn phố Nam Tràng</span><span lang="en">Over Nam Trang street</span></span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- FLOOR 2 -->
+        <article class="apt" id="tang-2">
+          <div class="apt-head">
+            <div>
+              <span class="eyebrow"><span lang="vi">Tầng 2 · Tối đa 9 khách</span><span lang="en">Floor 2 · Up to 9 guests</span></span>
+              <h3><span lang="vi">Ba phòng ngủ, cả ba nhìn ra hồ</span><span lang="en">Three bedrooms, all facing the lake</span></h3>
+            </div>
+            <ul class="chips">
+              <li class="hl"><span lang="vi">3 phòng ngủ view hồ</span><span lang="en">3 lake-view bedrooms</span></li>
+              <li><span lang="vi">Máy chiếu</span><span lang="en">Projector</span></li>
+              <li><span lang="vi">Máy rửa bát</span><span lang="en">Dishwasher</span></li>
+            </ul>
+          </div>
+          <div class="strip-wrap">
+            <div class="strip" data-gallery="t2" tabindex="-1"></div>
+            <div class="strip-nav"><span class="strip-count"></span><button type="button" data-dir="-1" aria-label="Ảnh trước"><svg><use href="#i-left"/></svg></button><button type="button" data-dir="1" aria-label="Ảnh sau"><svg><use href="#i-right"/></svg></button></div>
+          </div>
+          <div class="apt-body">
+            <div style="display:grid;gap:18px">
+              <p lang="vi">Cả 3 phòng ngủ đều nhìn ra hồ Trúc Bạch. Phòng khách có máy chiếu cho buổi tối xem phim, bếp có máy rửa bát, bàn ăn cạnh cửa sổ và ban công sát mặt hồ.</p>
+              <p lang="en">All three bedrooms face Truc Bach Lake. Living room with a projector for movie nights, kitchen with dishwasher, a dining table by the window and a balcony right above the water.</p>
+              <div class="cta-row">
+                <a class="btn btn-primary" href="https://anhome.gohost.app/property/3-bedroom-west-lake-view-kitchen-laundry-anhome-truc-bach" target="_blank" rel="noopener"><span lang="vi">Xem giá &amp; đặt Tầng 2</span><span lang="en">Check rates &amp; book Floor 2</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <a class="btn btn-line" href="https://zalo.me/0967935611" target="_blank" rel="noopener"><span lang="vi">Hỏi qua Zalo</span><span lang="en">Ask on Zalo</span></a>
+              </div>
+            </div>
+            <ul class="rooms">
+              <li><span lang="vi">Ban công</span><span lang="en">Balcony</span><span><span lang="vi">Sát mặt hồ, ghế mây</span><span lang="en">Right above the water</span></span></li>
+              <li><span lang="vi">Phòng khách</span><span lang="en">Living room</span><span><span lang="vi">Máy chiếu, bàn ghế gỗ</span><span lang="en">Projector, wooden furniture</span></span></li>
+              <li><span lang="vi">Bếp</span><span lang="en">Kitchen</span><span><span lang="vi">Máy rửa bát, cửa sổ hồ</span><span lang="en">Dishwasher, lake window</span></span></li>
+              <li><span lang="vi">Bàn ăn</span><span lang="en">Dining</span><span><span lang="vi">Cạnh cửa sổ</span><span lang="en">By the window</span></span></li>
+              <li><span lang="vi">Phòng ngủ</span><span lang="en">Bedrooms</span><span><span lang="vi">3, đều view hồ</span><span lang="en">3, all lake view</span></span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amen" id="tien-nghi">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow"><span lang="vi">Có sẵn trong nhà</span><span lang="en">In the house</span></span>
+      <h2><span lang="vi">Tiện nghi</span><span lang="en">Amenities</span></h2>
+    </div>
+    <ul class="grid-amen">
+      <li class="star"><svg><use href="#a-lake"/></svg><div><b lang="vi">View hồ Trúc Bạch &amp; Hồ Tây</b><b lang="en">Truc Bach &amp; West Lake view</b></div></li>
+      <li class="star"><svg><use href="#a-tub"/></svg><div><b lang="vi">Bồn tắm ngoài trời</b><b lang="en">Outdoor bathtub</b><small lang="vi">Tầng 3</small><small lang="en">Floor 3</small></div></li>
+      <li class="star"><svg><use href="#a-proj"/></svg><div><b lang="vi">Máy chiếu</b><b lang="en">Projector</b><small lang="vi">Tầng 2</small><small lang="en">Floor 2</small></div></li>
+      <li><svg><use href="#a-balc"/></svg><div><b lang="vi">Ban công nhìn ra hồ</b><b lang="en">Lake-facing balconies</b></div></li>
+      <li><svg><use href="#a-pot"/></svg><div><b lang="vi">Bếp nấu đầy đủ</b><b lang="en">Full kitchen</b></div></li>
+      <li><svg><use href="#a-dish"/></svg><div><b lang="vi">Máy rửa bát, bát đĩa</b><b lang="en">Dishwasher &amp; tableware</b></div></li>
+      <li><svg><use href="#a-fridge"/></svg><div><b lang="vi">Tủ lạnh</b><b lang="en">Fridge</b></div></li>
+      <li><svg><use href="#a-micro"/></svg><div><b lang="vi">Lò vi sóng</b><b lang="en">Microwave</b></div></li>
+      <li><svg><use href="#a-wash"/></svg><div><b lang="vi">Máy giặt &amp; sấy miễn phí</b><b lang="en">Free washer &amp; dryer</b></div></li>
+      <li><svg><use href="#a-tv"/></svg><div><b>TV</b></div></li>
+      <li><svg><use href="#a-wifi"/></svg><div><b>Wi-Fi</b></div></li>
+      <li><svg><use href="#a-ac"/></svg><div><b lang="vi">Điều hòa</b><b lang="en">Air conditioning</b></div></li>
+      <li><svg><use href="#a-hot"/></svg><div><b lang="vi">Nước nóng</b><b lang="en">Hot water</b></div></li>
+      <li><svg><use href="#a-dryer"/></svg><div><b lang="vi">Máy sấy tóc</b><b lang="en">Hair dryer</b></div></li>
+      <li><svg><use href="#a-soap"/></svg><div><b lang="vi">Dầu gội, sữa tắm</b><b lang="en">Shampoo &amp; shower gel</b></div></li>
+      <li><svg><use href="#a-car"/></svg><div><b lang="vi">Ô tô vào tận cửa</b><b lang="en">Car access to the door</b></div></li>
+      <li><svg><use href="#a-key"/></svg><div><b lang="vi">Tự nhận phòng bằng mã</b><b lang="en">Self check-in with code</b></div></li>
+      <li><svg><use href="#a-loft"/></svg><div><b lang="vi">Nhà phố Indochine</b><b lang="en">Indochine townhouse</b></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="loc" id="vi-tri">
+  <div class="wrap">
+    <div class="text">
+      <span class="eyebrow"><span lang="vi">Vị trí</span><span lang="en">Location</span></span>
+      <h2 style="font-size:clamp(1.9rem,4vw,2.8rem)"><span lang="vi">Giữa hồ Trúc Bạch và Hồ Tây</span><span lang="en">Between Truc Bach and West Lake</span></h2>
+      <p lang="vi">206 Nam Tràng, Trúc Bạch, Ba Đình, Hà Nội. Phố nhỏ yên tĩnh ven hồ Trúc Bạch, nằm giữa hồ Trúc Bạch và Hồ Tây.</p>
+      <p lang="en">206 Nam Trang, Truc Bach, Ba Dinh, Hanoi. A quiet lakeside street between Truc Bach Lake and West Lake.</p>
+      <span class="coords">21.0461° N · 105.8403° E</span>
+      <div class="cta-row" style="margin-top:0">
+        <a class="btn btn-primary" href="https://maps.app.goo.gl/PoadXxVttXzRfnyRA" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg><span lang="vi">Chỉ đường</span><span lang="en">Directions</span></a>
+      </div>
+    </div>
+    <div class="map" id="map">
+      <img src="images/t3-14.jpg" alt="Hồ Trúc Bạch nhìn từ nhà" loading="lazy">
+      <div class="overlay">
+        <button class="btn btn-light" type="button" id="load-map"><svg aria-hidden="true"><use href="#i-pin"/></svg><span lang="vi">Xem bản đồ</span><span lang="en">Show map</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="lien-he">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow"><span lang="vi">Liên hệ</span><span lang="en">Contact</span></span>
+      <h2><span lang="vi">Hỏi phòng trống &amp; giá</span><span lang="en">Ask about dates &amp; rates</span></h2>
+      <p lang="vi">Giá liên hệ. Nhắn Zalo hoặc WhatsApp để hỏi phòng trống và giá theo ngày, theo tháng.</p>
+      <p lang="en">Price on request. Message us on Zalo or WhatsApp for availability and nightly or monthly rates.</p>
+    </div>
+    <div>
+      <span class="phone" id="phone">0967 935 611</span>
+      <button class="copy" type="button" id="copy-phone"><span lang="vi">Sao chép số</span><span lang="en">Copy number</span></button>
+      <div class="ch">
+        <a href="https://zalo.me/0967935611" target="_blank" rel="noopener">Zalo<span>zalo.me/0967935611</span></a>
+        <a href="https://wa.me/84967935611" target="_blank" rel="noopener">WhatsApp<span>+84 967 935 611</span></a>
+        <a href="tel:+84967935611"><span lang="vi" style="opacity:1;font-weight:600;font-size:1em">Gọi điện</span><span lang="en" style="opacity:1;font-weight:600;font-size:1em">Call</span><span>+84 967 935 611</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Anhome 206 Nam Tràng · 206 Nam Tràng, Trúc Bạch, Ba Đình, Hà Nội</span>
+    <span>0967 935 611</span>
+  </div>
+</footer>
+
+<nav class="dock" aria-label="Liên hệ nhanh">
+  <a class="main" href="https://zalo.me/0967935611" target="_blank" rel="noopener">Zalo</a>
+  <a href="https://wa.me/84967935611" target="_blank" rel="noopener">WhatsApp</a>
+  <a href="tel:+84967935611"><span lang="vi">Gọi</span><span lang="en">Call</span></a>
+</nav>
+
+<dialog class="lb" id="lb" aria-label="Ảnh">
+  <div class="lb-inner">
+    <img id="lb-img" alt="">
+    <button class="x" type="button" id="lb-x" aria-label="Đóng"><svg><use href="#i-x"/></svg></button>
+    <button class="prev" type="button" id="lb-prev" aria-label="Ảnh trước"><svg><use href="#i-left"/></svg></button>
+    <button class="next" type="button" id="lb-next" aria-label="Ảnh sau"><svg><use href="#i-right"/></svg></button>
+    <div class="n" id="lb-n"></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  /* ---- photo lists: add or remove files here ---- */
+  var G = {
+    t3: [
+      ["t3-01.jpg","Bồn tắm ngoài trời buổi tối, nhìn ra hồ"],
+      ["t3-02.jpg","Ban công tầng 3 với dây đèn, nhìn ra hồ"],
+      ["t3-03.jpg","Phòng khách tầng 3"],
+      ["t3-04.jpg","Phòng khách và cầu thang lên gác xép"],
+      ["t3-05.jpg","Quầy bar bên cửa sổ nhìn hồ"],
+      ["t3-06.jpg","Bàn ăn tầng 3"],
+      ["t3-07.jpg","Bếp tầng 3 có máy rửa bát"],
+      ["t3-08.jpg","Phòng ngủ 1 tầng 3"],
+      ["t3-09.jpg","Phòng ngủ 2 tầng 3"],
+      ["t3-10.jpg","Gác xép sàn gỗ"],
+      ["t3-11.jpg","Phòng tắm tầng 3"],
+      ["t3-12.jpg","Ghế mây trên ban công"],
+      ["t3-13.jpg","Bồn tắm trên ban công lát gạch bông"],
+      ["t3-14.jpg","Hồ Trúc Bạch lúc chiều"]
+    ],
+    t2: [
+      ["t2-01.jpg","Phòng ngủ tầng 2 với cửa kính nhìn ra hồ"],
+      ["t2-02.jpg","Phòng khách tầng 2 có máy chiếu"],
+      ["t2-03.jpg","Phòng khách tầng 2, bàn ghế gỗ"],
+      ["t2-04.jpg","Bàn ăn cạnh cửa sổ tầng 2"],
+      ["t2-05.jpg","Bếp tầng 2 có máy rửa bát"],
+      ["t2-06.jpg","Bếp tầng 2 với cửa sổ nhìn hồ"],
+      ["t2-07.jpg","Bếp từ cạnh cửa sổ"],
+      ["t2-08.jpg","Kệ bát đĩa trong bếp"],
+      ["t2-09.jpg","Phòng ngủ tầng 2"],
+      ["t2-10.jpg","Cửa ban công nhìn ra hồ"],
+      ["t2-11.jpg","Phòng ngủ tầng 2 có tủ quần áo"],
+      ["t2-12.jpg","Phòng tắm tầng 2"],
+      ["t2-13.jpg","Hồ Trúc Bạch nhìn từ tầng 2"]
+    ]
+  };
+
+  var lb = document.getElementById('lb'), lbImg = document.getElementById('lb-img'), lbN = document.getElementById('lb-n');
+  var cur = {list:null, i:0};
+  function show(){ var it = cur.list[cur.i]; lbImg.src = 'images/' + it[0]; lbImg.alt = it[1]; lbN.textContent = (cur.i+1) + ' / ' + cur.list.length; }
+  function open(list, i){ cur.list = list; cur.i = i; show(); if (lb.showModal) lb.showModal(); else lb.setAttribute('open',''); }
+  function step(d){ cur.i = (cur.i + d + cur.list.length) % cur.list.length; show(); }
+  document.getElementById('lb-x').onclick = function(){ lb.close(); };
+  document.getElementById('lb-prev').onclick = function(){ step(-1); };
+  document.getElementById('lb-next').onclick = function(){ step(1); };
+  lb.addEventListener('click', function(e){ if (e.target === lb || e.target.classList.contains('lb-inner')) lb.close(); });
+  lb.addEventListener('keydown', function(e){ if (e.key === 'ArrowLeft') step(-1); if (e.key === 'ArrowRight') step(1); });
+
+  document.querySelectorAll('.strip').forEach(function(strip){
+    var list = G[strip.dataset.gallery];
+    list.forEach(function(it, i){
+      var b = document.createElement('button');
+      b.type = 'button'; b.setAttribute('aria-label', it[1]);
+      var im = document.createElement('img');
+      im.src = 'images/' + it[0]; im.alt = it[1]; im.loading = 'lazy';
+      b.appendChild(im); b.onclick = function(){ open(list, i); };
+      strip.appendChild(b);
+    });
+    var wrap = strip.parentElement, count = wrap.querySelector('.strip-count');
+    count.textContent = list.length + ' ảnh · photos';
+    wrap.querySelectorAll('.strip-nav button').forEach(function(btn){
+      btn.onclick = function(){ strip.scrollBy({left: strip.clientWidth * 0.8 * (+btn.dataset.dir), behavior:'smooth'}); };
+    });
+  });
+
+  /* ---- language ---- */
+  function setLang(l){
+    document.body.dataset.lang = l;
+    document.documentElement.lang = l;
+    document.querySelectorAll('.lang button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.set === l ? 'true' : 'false'); });
+    try { localStorage.setItem('anhome-lang', l); } catch(e){}
+  }
+  var saved = null; try { saved = localStorage.getItem('anhome-lang'); } catch(e){}
+  setLang(saved || ((navigator.language||'vi').toLowerCase().indexOf('vi') === 0 ? 'vi' : 'en'));
+  document.querySelectorAll('.lang button').forEach(function(b){ b.onclick = function(){ setLang(b.dataset.set); }; });
+
+  /* ---- copy phone ---- */
+  var cp = document.getElementById('copy-phone');
+  cp.onclick = function(){
+    var done = function(){ cp.innerHTML = document.body.dataset.lang === 'en' ? 'Copied' : 'Đã sao chép'; };
+    var sel = function(){ var r = document.createRange(); r.selectNodeContents(document.getElementById('phone')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); };
+    try { navigator.clipboard.writeText('0967935611').then(done, sel); } catch(e){ sel(); }
+  };
+
+  /* ---- map loads on request ---- */
+  document.getElementById('load-map').onclick = function(){
+    var m = document.getElementById('map');
+    m.innerHTML = '<iframe title="Bản đồ 206 Nam Tràng" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?hl=vi&q=21.046097,105.840268&z=16&output=embed"></iframe>';
+  };
+
+  /* ---- highlight current floor in the house section ---- */
+  if ('IntersectionObserver' in window){
+    var links = document.querySelectorAll('.house a');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) links.forEach(function(a){ a.classList.toggle('on', a.dataset.floor === e.target.id); }); });
+    }, {rootMargin:'-40% 0px -50% 0px'});
+    document.querySelectorAll('.apt').forEach(function(a){ io.observe(a); });
+  }
+})();
+</script>
+</body>
+</html>
